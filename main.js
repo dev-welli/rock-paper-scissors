@@ -10,14 +10,23 @@ const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissor_div = document.getElementById("scissor");
 
-rock_div.addEventListener('click', function(){
-   console.log("you clicked rock");
-})
+function game(userChoice){
+   console.log("BLAH " + userChoice);
+}
 
-paper_div.addEventListener('click', function(){
-   console.log("you clicked paper");
-})
+function main(){
+   rock_div.addEventListener('click', function(){
+      game("ROCK");
+   })
+   
+   paper_div.addEventListener('click', function(){
+      game("PAPER");
+   })
+   
+   scissor_div.addEventListener('click', function(){
+      game("SCISSOR");
+   })
+}
 
-scissor_div.addEventListener('click', function(){
-   console.log("you clicked scissor");
-})
+main();
+
