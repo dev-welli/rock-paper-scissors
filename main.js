@@ -12,8 +12,26 @@ const scissor_div = document.getElementById("scissor");
 
 function game(userChoice){
    const computerChoice = getComputerChoice();
-   console.log("user choice: " + userChoice);
-   console.log("computer choice: " +  computerChoice);
+   //console.log("user choice: " + userChoice);
+   //console.log("computer choice: " +  computerChoice);
+
+   switch (userChoice + computerChoice){
+      case "rockscissor":
+      case "paperrock":
+      case "scissorpaper":
+         console.log("USER WINS");
+         break;
+      case "rockpaper":
+      case "paperscissor":
+      case "scissorrock":
+         console.log("COMPUTER WINS")
+         break;
+      case "rockrock":
+      case "paperpaper":
+      case "scissorscissor":
+         console.log("DRAW!")
+         break;
+   }
 }
 
 function getComputerChoice(){
@@ -26,15 +44,15 @@ function getComputerChoice(){
 
 function main(){
    rock_div.addEventListener('click', function(){
-      game("ROCK");
+      game("rock");
    })
    
    paper_div.addEventListener('click', function(){
-      game("PAPER");
+      game("paper");
    })
    
    scissor_div.addEventListener('click', function(){
-      game("SCISSOR");
+      game("scissor");
    })
 }
 
