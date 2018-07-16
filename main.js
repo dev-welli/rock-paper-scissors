@@ -24,27 +24,77 @@ function game(userChoice){
    switch (userChoice + computerChoice){
       case "RockScissor":
       case "RockLizard":
+         var customWord = " crushes ";
+         win(userChoice, customWord, computerChoice);
+         break;
       case "LizardSpock":
+         var customWord = " poisons ";
+         win(userChoice, customWord, computerChoice);
+         break;
       case "LizardPaper":
+         var customWord = " eats ";
+         win(userChoice, customWord, computerChoice);
+         break;
       case "SpockScissor":
+         var customWord = " smashes ";
+         win(userChoice, customWord, computerChoice);
+         break;
       case "SpockRock":
+         var customWord = " vaporises ";
+         win(userChoice, customWord, computerChoice);
+         break;
       case "ScissorLizard":
+         var customWord = " decapitates ";
+         win(userChoice, customWord, computerChoice);
+         break;
       case "ScissorPaper":
+         var customWord = " cuts ";
+         win(userChoice, customWord, computerChoice);
+         break;
       case "PaperSpock":
+         var customWord = " disproves ";
+         win(userChoice, customWord, computerChoice);
+         break;
       case "PaperRock":
-         win(userChoice, computerChoice);
+         var customWord = " covers ";
+         win(userChoice, customWord, computerChoice);
          break;
       case "RockPaper":
+         var customWord = " covered by ";
+         lose(userChoice, customWord, computerChoice);
+         break;
       case "RockSpock":
+         var customWord = " vaporised by ";
+         lose(userChoice, customWord, computerChoice);
+         break;
       case "PaperScissor":
+         var customWord = " cut by ";
+         lose(userChoice, customWord, computerChoice);
+         break;
       case "PaperLizard":
+         var customWord = " eaten by ";
+         lose(userChoice, customWord, computerChoice);
+         break;
       case "ScissorRock":
-      case "ScissorSpock":
       case "LizardRock":
+         var customWord = " crushed by ";
+         lose(userChoice, customWord, computerChoice);
+         break;
+      case "ScissorSpock":
+         var customWord = " smashed by ";
+         lose(userChoice, customWord, computerChoice);
+         break;
       case "LizardScissor":
+         var customWord = " decapitated by ";
+         lose(userChoice, customWord, computerChoice);
+         break;
       case "SpockLizard":
+         var customWord = " poisoned by ";
+         lose(userChoice, customWord, computerChoice);
+         break;
       case "SpockPaper":
-         lose(userChoice, computerChoice);
+         var customWord = " disproved by ";
+         lose(userChoice, customWord, computerChoice);
          break;
       case "RockRock":
       case "PaperPaper":
@@ -56,24 +106,24 @@ function game(userChoice){
    }
 }
 
-function win(userChoice, computerChoice){
+function win(userChoice, customWord, computerChoice){
    const smallUserLabel = "user".fontsize(4).sub();
    const smallCompLabel = "comp".fontsize(4).sub();
    console.log("USER WINS");
    userScore++;
    console.log(userScore);
    userScore_span.innerHTML = userScore;
-   result_p.innerHTML = userChoice + smallUserLabel + " beats " + computerChoice + smallCompLabel + ". You win!";
+   result_p.innerHTML = userChoice + smallUserLabel + customWord + computerChoice + smallCompLabel + ". You win!";
 }
 
-function lose(userChoice, computerChoice){
+function lose(userChoice, customWord, computerChoice){
    const smallUserLabel = "user".fontsize(4).sub();
    const smallCompLabel = "comp".fontsize(4).sub();
    console.log("COMPUTER WINS")
    computerScore++;
    console.log(computerScore);
    computerScore_span.innerHTML = computerScore;
-   result_p.innerHTML = userChoice + smallUserLabel + " loses to " + computerChoice + smallCompLabel +". You lose!";
+   result_p.innerHTML = userChoice + smallUserLabel + customWord + computerChoice + smallCompLabel +". You lose!";
 }
 
 function draw(userChoice, computerChoice){
@@ -84,7 +134,7 @@ function draw(userChoice, computerChoice){
 }
 
 function getComputerChoice(){
-   const choices = ['Rock', 'Paper', 'Scissor'];
+   const choices = ['Rock', 'Paper', 'Scissor', 'Lizard', 'Spock'];
    const randomNum = Math.floor(Math.random() * 5 )//generating rounded random number between 0..4
    return choices[randomNum];
 }
