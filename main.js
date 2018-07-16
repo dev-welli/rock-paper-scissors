@@ -1,6 +1,5 @@
 //STILL NEED TO DO
 //CHANGE THE ICONS?
-//USE CUSTOM WORDS FOR WINNING/LOSING?
 
 
 //caching the DOM elements
