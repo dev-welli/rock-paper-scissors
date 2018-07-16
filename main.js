@@ -39,20 +39,26 @@ function win(userChoice, computerChoice){
    userScore++;
    console.log(userScore);
    userScore_span.innerHTML = userScore;
-   result_p.innerHTML = userChoice + " beats " + computerChoice +". You win!";
+   const smallUserLabel = "user".fontsize(4).sub();
+   const smallCompLabel = "comp".fontsize(4).sub();
+   result_p.innerHTML = userChoice + smallUserLabel + " beats " + computerChoice + smallCompLabel + ". You win!";
 }
 
 function lose(userChoice, computerChoice){
    console.log("COMPUTER WINS")
    computerScore++;
    console.log(computerScore);
+   const smallUserLabel = "user".fontsize(4).sub();
+   const smallCompLabel = "comp".fontsize(4).sub();
    computerScore_span.innerHTML = computerScore;
-   result_p.innerHTML = userChoice + " loses to " + computerChoice +". You lose!";
+   result_p.innerHTML = userChoice + smallUserLabel + " loses to " + computerChoice + smallCompLabel +". You lose!";
 }
 
 function draw(userChoice, computerChoice){
    console.log("DRAW!")
-   result_p.innerHTML = userChoice + " equals to " + computerChoice +". It's a draw.";
+   const smallUserLabel = "user".fontsize(4).sub();
+   const smallCompLabel = "comp".fontsize(4).sub();
+   result_p.innerHTML = userChoice + smallUserLabel + " equals to " + computerChoice + smallCompLabel +". It's a draw.";
 }
 
 function getComputerChoice(){
